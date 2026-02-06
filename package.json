@@ -1,0 +1,30 @@
+{
+  "name": "food-ordering-app",
+  "description": "this is food ordering app by Lalit Mohan Bindhani",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalitmohanbindhani/food-ordering-app.git"
+  },
+  "keywords": [],
+  "author": "Akshay saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalitmohanbindhani/food-ordering-app/issues"
+  },
+  "homepage": "https://github.com/lalitmohanbindhani/food-ordering-app#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browserslist" : [
+    "last 2 versions"
+  ]
+}
