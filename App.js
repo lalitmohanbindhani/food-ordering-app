@@ -705,14 +705,8 @@ const Heading = () => {
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const {
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    slaString,
-    cloudinaryImageId,
-  } = resData.info;
+  const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
+    resData.info;
   return (
     <div className="res-card">
       <img
@@ -727,7 +721,7 @@ const RestaurantCard = (props) => {
       <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating} stars</h4>
       <h4>{costForTwo}</h4>
-      <h4>{slaString} Minutes</h4>
+      <h4>{sla.slaString} Minutes</h4>
     </div>
   );
 };
@@ -737,14 +731,9 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard resData={resList[0]} />
-        <RestaurantCard resData={resList[1]} />
-        <RestaurantCard resData={resList[2]} />
-        <RestaurantCard resData={resList[3]} />
-        <RestaurantCard resData={resList[4]} />
-        <RestaurantCard resData={resList[5]} />
-        <RestaurantCard resData={resList[6]} />
-        <RestaurantCard resData={resList[7]} />
+        {resList.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        ))}
       </div>
     </div>
   );
