@@ -4,24 +4,28 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      userInfo: {
+        name: "Dummy",
+        location: "sbdjvskvojsrvo",
+      },
     };
   }
+
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/lalitmohanbindhani");
+    const json = await data.json();
+    console.log(json);
+    this.setState({
+      userInfo: json,
+    });
+  }
   render() {
-    const { name, location } = this.props;
-    const { count } = this.state;
+    const { name, location, avatar_url } = this.state.userInfo;
+
+    // console.log(this.props.name + "Child Render");
     return (
       <div className="user">
-        <h2>Count: {count}</h2>
-        <button
-          onClick={() => {
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Increase Count
-        </button>
+        <img src={avatar_url} />
         <h3>Name : {name}</h3>
         <h4>Location: {location}</h4>
         <h4>Contact: bindhanilalitmohan@gmail.com</h4>
@@ -31,3 +35,5 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
+
+//https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/

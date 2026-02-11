@@ -1,14 +1,22 @@
 import User from "./User";
 import UserClass from "./UserClass";
+import React from "react";
 
-const About = () => {
-  return (
-    <div>
-      <h1>About</h1>
-      <h2>This in Food ordering app about us page</h2>
-      <UserClass name="Lalit Mohan Bindhani (Class)" location="Bhubaneswar" />
-    </div>
-  );
-};
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    // console.log("Parent Render");
+    return (
+      <div>
+        <h1>About</h1>
+        <h2>This in Food ordering app about us page</h2>
+        <UserClass name="First" location="Bhubaneswar" />
+      </div>
+    );
+  }
+}
 
 export default About;
