@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const RestaurantMenu = () => {
   return (
     <div className="menu">
