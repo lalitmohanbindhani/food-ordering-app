@@ -53,7 +53,7 @@ const Body = () => {
             }}
           />
           <button
-            className="px-4 py-2 m-4 bg-green-100"
+            className="px-4 py-2 m-4 bg-green-100 rounded-lg"
             onClick={() => {
               const filtereRestaurants = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase()),
@@ -72,13 +72,13 @@ const Body = () => {
               );
               setListOfRestaurants(filteredList);
             }}
-            className="px-4 py-2 bg-gray-100"
+            className="px-4 py-2 bg-gray-100 rounded-lg"
           >
             Top Rated Restaurants
           </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestaurants.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
