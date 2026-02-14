@@ -5,7 +5,7 @@ const RestaurantCard = ({ resData }) => {
     resData.info;
 
   return (
-    <div className="m-4 p-4 w-[220px]" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="m-4 p-4 w-[220px] bg-gray-100 hover:bg-gray-200 shadow-lg">
       <img
         className="w-[100%] h-33 rounded-lg"
         src={CDN_URL + cloudinaryImageId}
