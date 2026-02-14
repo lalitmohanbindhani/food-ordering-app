@@ -53,7 +53,7 @@ const Body = () => {
             }}
           />
           <button
-            className="px-4 py-2 m-4 bg-green-100 rounded-lg"
+            className="px-4 py-2 m-4 bg-green-100  rounded-lg hover:bg-green-200"
             onClick={() => {
               const filtereRestaurants = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase()),
