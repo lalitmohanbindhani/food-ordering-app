@@ -72,7 +72,7 @@ const Body = () => {
               );
               setListOfRestaurants(filteredList);
             }}
-            className="px-4 py-2 bg-gray-100 rounded-lg"
+            className="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200"
           >
             Top Rated Restaurants
           </button>
