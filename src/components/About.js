@@ -15,9 +15,7 @@ class About extends React.Component {
         <h1>About</h1>
         <div>
           <UserContext.Consumer>
-            {({ loggedInUser }) => (
-              <h2 className="font-bold">{loggedInUser}</h2>
-            )}
+            {(data) => <h2 className="font-bold">{data.loggedInUser}</h2>}
           </UserContext.Consumer>
         </div>
         <h2>This in Food ordering app about us page</h2>
