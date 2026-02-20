@@ -10,26 +10,30 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 // import Grocery from "./components/Grocery";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
-  const [userName, setuserName] = useState();
+  const [userName, setUserName] = useState();
   useEffect(() => {
     //api call to  get logged in user info
     const data = {
       name: "Lalit Mohan",
     };
-    setuserName(data.name);
+    setUserName(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
